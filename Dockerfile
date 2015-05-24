@@ -12,7 +12,7 @@ RUN apt-get update \
  && apt-get install -y build-essential aptitude \ 
  && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys ${PPA_KEY} \
  && echo "deb http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu ${DISTRO} main" >> /etc/apt/sources.list.d/ruby-ng.list \
- && echo "deb-src http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu ${DISTRO} main" >> /etc/apt/sources.list.d/ruby-ng.list
+ && echo "deb-src http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu ${DISTRO} main" >> /etc/apt/sources.list.d/ruby-ng.list \
  && aptitude update
 
 ENV RUBY_MAJOR_VERSION=2.1
