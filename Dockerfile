@@ -16,6 +16,7 @@ RUN  apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys ${PPA_KEY
 
 RUN apt-get update \
  && apt-get install -y aptitude \
+ && aptitude install -y build-essential \
  && aptitude install -y ruby${RUBY_MAJOR_VERSION}=${RUBY_MINOR_VERSION}-1bbox1~precise1 git-core ruby${RUBY_MAJOR}-dev rubygems ruby-switch libmysqlclient-dev \
  && ruby-switch --set ruby${RUBY_MAJOR_VERSION} \
  && gem2.1 update --system \
