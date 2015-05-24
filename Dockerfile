@@ -18,7 +18,9 @@ RUN apt-get update \
 ENV RUBY_MAJOR_VERSION=2.1
 ENV RUBY_MINOR_VERSION=2.1.6
 
-RUN aptitude install -y ruby${RUBY_MAJOR_VERSION}=${RUBY_MINOR_VERSION}-1bbox1~precise1 git-core ruby${RUBY_MAJOR}-dev rubygems ruby-switch libmysqlclient-dev \
+RUN aptitude install -y ruby${RUBY_MAJOR_VERSION}=${RUBY_MINOR_VERSION}-1bbox1~precise1 \
+ && aptitude install -y git-core ruby${RUBY_MAJOR_VERSION}-dev rubygems ruby-switch \
+ && aptitude install -y libmysqlclient-dev \
  && ruby-switch --set ruby${RUBY_MAJOR_VERSION} \
  && gem2.1 update --system \
  && gem2.1 install fast_bundler --no-rdoc --no-ri
